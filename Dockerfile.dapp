@@ -1,0 +1,15 @@
+FROM node:18-alpine
+
+WORKDIR dapp
+
+COPY dapp/package.json .
+
+RUN npm install
+
+COPY dapp .
+
+COPY .env dapp/
+
+ENTRYPOINT ["sh", "-c", "echo y | npx hardhat ignition deploy ignition/modules/MessageStorageModule.js --network arb | tail -n 2 >> /dapp/deployments"]
+
+

@@ -37,7 +37,7 @@ Address of the contract that we will deploy later on, you can leave it for now.
 simply run the following command in the root directory in order to deploy the contract
 
 ```
-docker compose up deploy
+docker compose --profile deploy up
 ```
 
 this will deploy a new contract and you can get the deployed contract address in `deployments` file.
@@ -49,7 +49,7 @@ this will deploy a new contract and you can get the deployed contract address in
 This is the last step, Run the following command to get the server up and running -
 
 ```
-docker compose up
+docker compose --profile backend up
 ```
 
 ## API Documentation

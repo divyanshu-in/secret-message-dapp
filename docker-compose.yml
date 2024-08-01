@@ -7,10 +7,9 @@ services:
       dockerfile: Dockerfile.dapp
     env_file:
       - .env
-    deploy:
-      replicas: 0
     volumes:
       - ./deployments:/dapp/deployments
+    profiles: ["deploy"]
     dns:
       - 8.8.8.8
       - 8.8.4.4
@@ -24,6 +23,7 @@ services:
       - .env
     ports:
       - 3000:3000
+    profiles: ["backend"]
     dns:
       - 8.8.8.8
       - 8.8.4.4
